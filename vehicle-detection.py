@@ -25,7 +25,8 @@ if __name__ == '__main__':
 		vehicle_netcfg  = 'data/vehicle-detector/yolo-voc.cfg'
 		vehicle_dataset = 'data/vehicle-detector/voc.data'
 
-		vehicle_net  = dn.load_net(vehicle_netcfg, vehicle_weights, 0)
+		# vehicle_net  = dn.load_net(vehicle_netcfg, vehicle_weights, 0)
+		vehicle_net = dn.load_net(vehicle_netcfg.encode('utf-8'), vehicle_weights.encode('utf-8'), 0)
 		vehicle_meta = dn.load_meta(vehicle_dataset)
 
 		imgs_paths = image_files_from_folder(input_dir)
