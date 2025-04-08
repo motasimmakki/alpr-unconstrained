@@ -27,12 +27,14 @@ def save_model(model,path,verbose=0):
 	if verbose: print('Saved to %s' % path)
 
 def load_model(path,custom_objects={},verbose=0):
+	from keras.models import Model
 	from keras.models import model_from_json
 
 	path = splitext(path)[0]
 	with open('%s.json' % path,'r') as json_file:
 		model_json = json_file.read()
 	model = model_from_json(model_json, custom_objects=custom_objects)
+	custom_objects["Model"] = Model
 	model.load_weights('%s.h5' % path)
 	if verbose: print('Loaded from %s' % path)
 	return model
