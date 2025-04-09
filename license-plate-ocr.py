@@ -25,8 +25,11 @@ if __name__ == '__main__':
 		ocr_netcfg  = 'data/ocr/ocr-net.cfg'
 		ocr_dataset = 'data/ocr/ocr-net.data'
 
-		ocr_net  = dn.load_net(ocr_netcfg, ocr_weights, 0)
-		ocr_meta = dn.load_meta(ocr_dataset)
+		# ocr_net  = dn.load_net(ocr_netcfg, ocr_weights, 0)
+		ocr_net = dn.load_net(ocr_netcfg.encode('utf-8'), ocr_weights.encode('utf-8'), 0)
+
+		# ocr_meta = dn.load_meta(ocr_dataset)
+		ocr_meta = dn.load_meta(ocr_dataset.encode('utf-8'))
 
 		imgs_paths = sorted(glob('%s/*lp.png' % output_dir))
 
