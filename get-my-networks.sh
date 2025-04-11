@@ -6,7 +6,7 @@ mkdir data/lp-detector -p
 mkdir data/ocr -p
 mkdir data/vehicle-detector -p
 
-cp trained-wpod/WPOD-NET_final_100.weights.h5   data/lp-detector/
+cp trained-wpod/WPOD-NET_final_100.h5   data/lp-detector/
 cp trained-wpod/WPOD-NET_final_100.json data/lp-detector/
 
 wget -c -N http://sergiomsilva.com/data/eccv2018/ocr/ocr-net.cfg     -P data/ocr/
