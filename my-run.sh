@@ -30,7 +30,7 @@ then
 	exit 1
 fi
 
-lp_model="data/lp-detector/WPOD-NET_final_100.weights.h5"
+lp_model="data/lp-detector/WPOD-NET_final_100.h5"
 input_dir=''
 output_dir=''
 csv_file=''
